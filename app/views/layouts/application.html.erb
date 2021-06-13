@@ -27,7 +27,7 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
               <li class="nav-item">
-                <%= link_to content_tag(:i, ' Home', class: 'fa fa-home'), root_path, class: 'nav-link text-light' %>
+                <%= link_to content_tag(:i, ' Home', class: 'fa fa-home'), user_path(current_user.id), class: 'nav-link text-light' %>
               </li>
               <li class="nav-item">
                 <%= link_to content_tag(:i, ' Users', class: 'fa fa-users'), about_path, class: 'nav-link text-light' %>
