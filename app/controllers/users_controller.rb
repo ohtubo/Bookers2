@@ -4,12 +4,15 @@ class UsersController < ApplicationController
   end
 
   def index
+    @user = current_user
+    @users = User.all
   end
 
   def show
      @user = User.find(params[:id])
      @book = Book.new
-     @books = Book.all
+    # @books  = @user.books.page(params[:page]).reverse_order
+    @books = Book.all
   end
 
   def edit
@@ -19,7 +22,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to user_path(@user.id)  
+    redirect_to user_path(@user.id)
   end
 
   def destroy
@@ -29,7 +32,7 @@ class UsersController < ApplicationController
   # ストロングパラメータ
 
   def user_params
-    params.require(:user).permit(:name, :introduction, :profile_image)
+    params.require(:user).permit(:name, :introduction, :profile_image, :user_id)
   end
 
 end

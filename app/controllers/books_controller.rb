@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   def create
     # １. データを新規登録するためのインスタンス作成
     @book = Book.new(book_params)
-    @book.user_id = current_user.id
+    @book.user_id = current_user.id　#current_user: ログインユーザーのid情報を渡す。
     # ２. データをデータベースに保存するためのsaveメソッド実行
     @book.save
     # ３. トップ画面へリダイレクト
@@ -11,12 +11,8 @@ class BooksController < ApplicationController
   end
 
   def index
-  end
-
-  def show
-  end
-
-  def edit
+   @user = current_user
+   @books = Book.all
   end
 
   def update

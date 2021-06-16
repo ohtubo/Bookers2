@@ -30,10 +30,10 @@
                 <%= link_to content_tag(:i, ' Home', class: 'fa fa-home'), user_path(current_user.id), class: 'nav-link text-light' %>
               </li>
               <li class="nav-item">
-                <%= link_to content_tag(:i, ' Users', class: 'fa fa-users'), about_path, class: 'nav-link text-light' %>
+                <%= link_to content_tag(:i, ' Users', class: 'fa fa-users'), users_path, class: 'nav-link text-light' %>
               </li>
               <li class="nav-item">
-                <%= link_to content_tag(:i, ' Books', class: 'fa fa-book-open'), new_user_registration_path, class: 'nav-link text-light' %>
+                <%= link_to content_tag(:i, ' Books', class: 'fa fa-book-open'), books_path, class: 'nav-link text-light' %>
               </li>
               <li class="nav-item">
                 <%= link_to content_tag(:i, ' logout', class: 'fa fa-sign-out-alt'), destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
