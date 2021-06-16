@@ -1,0 +1,26 @@
+<p id="notice"></p>
+
+<div class="container px-5 px-sm-0">
+  <div class="row">
+
+      <%= render 'layouts/user_form', book: @book ,user: @user %>
+
+<div class="col-md-8 offset-md-1">
+  <h2>Book detail</h2>
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>
+          <%= attachment_image_tag @user, :profile_image, :fill, 100, 100,fallback: "no_image.jpg" %>
+          <br><%= link_to @user.name, "/users/#{@user.id}" %>
+        </td>
+        <td><%= @book.title %></td>
+        <td><%= @book.body %></td>
+        <td><%= link_to 'Edit', edit_book_path(@book) , class: 'btn btn-sm btn-success'%></td>
+        <td><%= link_to "Destroy", "/books/#{@book.id}", method: :delete, "data-confirm" => "本当に消しますか？" , class: 'btn btn-sm btn-danger'%></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  </div>
+</div>
