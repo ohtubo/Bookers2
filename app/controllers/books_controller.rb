@@ -1,5 +1,7 @@
 class BooksController < ApplicationController
 
+  before_action :authenticate_user!
+
   def create
     # １. データを新規登録するためのインスタンス作成
     @book = Book.new(book_params)

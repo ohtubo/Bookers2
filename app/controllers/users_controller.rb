@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
-  def new
-  end
+  before_action :authenticate_user!
 
   def index
     @book = Book.new
