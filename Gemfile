@@ -71,3 +71,8 @@ gem 'font-awesome-sass', '~> 5.13'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 # 画像加工用（サイズ調整など）gem
 gem "refile-mini_magick"
+#テスト実装bundle install
+gem 'capybara', '>= 2.15'
+gem 'rspec-rails'
+gem "factory_bot_rails"
+gem 'faker'
