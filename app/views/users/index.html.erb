@@ -1,4 +1,3 @@
-<p id="notice"></p>
 
 <div class="container px-5 px-sm-0">
 <%= render 'layouts/error_form_book', book: @book %>
@@ -21,7 +20,7 @@
           <tbody>
             <% @users.each do |user| %>
               <tr>
-                <td><%= attachment_image_tag user, :profile_image, fallback: "no_image.jpg" , size: "40x40"%></td>
+                <td><%= attachment_image_tag user, :profile_image, fallback: "no_image.jpg" , size: "50x50"%></td>
                 <td><%= user.name %></td>
                 <th><%= link_to 'Show', user_path(user) %></th>
               </tr>

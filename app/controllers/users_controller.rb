@@ -16,6 +16,11 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    #if分をスルーするとどう処理すればいいかわからなくなる
+    #同じかどうかを比較するときに.idのみ
+    if @user.id != current_user.id
+      redirect_to user_path(current_user)
+    end
   end
 
   def update
