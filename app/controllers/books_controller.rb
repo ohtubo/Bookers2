@@ -5,7 +5,8 @@ class BooksController < ApplicationController
   def create
     # １. データを新規登録するためのインスタンス作成
     @book = Book.new(book_params)
-    @book.user_id = current_user.id#current_user: ログインユーザーのid情報を渡す。
+    #current_user: ログインユーザーのid情報を渡す。
+    @book.user_id = current_user.id
     # ２. データをデータベースに保存するためのsaveメソッド実行
 
     # ３. トップ画面へリダイレクト
@@ -13,10 +14,10 @@ class BooksController < ApplicationController
       flash[:notice] = "You have created book successfully."
       redirect_to book_path(@book)
     else
-      render :user_index
-      @book = Book.new
+      #index_book
       @user = current_user
-      @users = User.all
+      @books = Book.all
+      render :index
     end
   end
 
@@ -28,6 +29,8 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    #データがからの場合クリエイト、埋まっている場合update
+    @newbook = Book.new
     @user = @book.user
   end
 
