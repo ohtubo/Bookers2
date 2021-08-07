@@ -76,3 +76,8 @@ gem 'capybara', '>= 2.15'
 gem 'rspec-rails'
 gem "factory_bot_rails"
 gem 'faker'
+
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
